@@ -31,8 +31,7 @@ pipeline {
         }
         stage('pushing Artifact to Nexus') {
             steps {
-                nexusArtifactUploader artifacts: [[artifactId: 'medicure', classifier: '', file: 'target/medicure-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-creds', groupId: 'com.project.staragile', nexusUrl: '18.61.71.92:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Health-care', version: '0.0.1-SNAPSHOT'
-            }
+                nexusArtifactUploader artifacts: [[artifactId: 'medicure', classifier: '', file: 'target/medicure-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-creds', groupId: 'com.project.staragile', nexusUrl: '98.130.31.85:808', nexusVersion: 'nexus3', protocol: 'http', repository: 'Health-care', version: '0.0.1-SNAPSHOT'
         }
 	stage('Build the Image in docker') {
             steps {
