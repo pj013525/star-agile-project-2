@@ -43,7 +43,7 @@ pipeline {
         }
 	stage('push image to the dockerhub') {
             steps {
-                withCredentials([string(credentialsId: 'dockerhub-details', variable: 'dockerhub-details')]) {
+               withCredentials([string(credentialsId: 'dockerhub-details', variable: 'dockerhub-details')]) {
                 sh "docker login -u pj013525 -p ${dockerhub-details}"
 		sh 'docker push pj013525/health-care:v1'	
                 }
